@@ -1,0 +1,77 @@
+/**/
+.center{
+	text-align: center;
+	vertical-align: middle;
+}
+.centertable{
+	text-align: center;
+	font-size:3vw;
+}
+.tabb{
+	table-layout: fixed;
+	width:100%;
+}
+.right{
+	text-align: right;
+}
+.left{
+	text-align: left;
+}
+.rating{
+	margin-left: 5vw;
+}
+.modal-content{
+	width:100%;
+	height:120%;
+	position: fixed;
+}
+
+.accordion {
+    margin: 2em 0;
+    padding: 0;
+}
+
+.accordion dd {
+  overflow: scroll;
+  height: 20vh;
+  -webkit-transition: height 0.5s ease;
+  transition: height 0.5s ease;
+}
+.accordion dd.hide {
+  height: 0;
+  overflow:hidden;
+}
+
+/*スクロールさせようとしてダメだったやつ*/
+/* .accordion ons-page {
+  width:95%;
+  height:30%;
+  top:57vh;
+  border-radius:10px;
+  margin:0 auto;
+  padding:0;
+  overflow-x:hidden;
+  -webkit-transition: height 0.5s ease;
+  transition: height 0.5s ease;
+}
+.accordion ons-page.hide {
+  height: 0;
+} */
+
+.hiddentable{
+	text-align: center;
+	font-size:10vw;
+	table-layout: fixed;
+	width:100%;
+}
+
+.hiddenbox{
+	table-layout: fixed;
+	width:100%;
+	font-size:3vw;
+	vertical-align: middle;
+}
+.unchi{
+	overflow:scroll;
+	height: 60vh;
+}

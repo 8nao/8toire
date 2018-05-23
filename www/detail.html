@@ -1,0 +1,136 @@
+<!-- <ons-split-view>を使用してタブレットで見た際のレイアウトもやる -->
+<!-- ons-loading-placeholder属性を使用してマップロード中みたいなのも実装しよう -->
+<!-- iosの場合footerにボタンを置く? -->
+
+<!-- マーカーの吹き出し押したら飛ぶページ -->
+
+<ons-page id="detail.html" ng-controller="PageController as Page">
+
+	<div id="topanc"></div>
+
+	<!-- Pull2Refresh 見かけだけなので要修正 -->
+	<!-- lazy-repeatの場合の使い方がよくわかっていない -->
+	<!-- <ons-pull-hook ng-action="list.delegate.refresh()" var="loader">
+		<span ng-switch="loader.state">
+     	<span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Pull down to refresh</span>
+		<span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Release to refresh</span>
+		<span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Loading data...</span>
+		</span>
+	</ons-pull-hook> -->
+
+	<ons-toolbar>
+		<div class="left">
+			<ons-back-button>Back</ons-back-button>
+		</div>
+		<div class="center">詳細</div>
+		<!-- <div class="right">
+			<ons-toolbar-button>
+				<ons-icon icon="ion-edit, material:md-edit" ng-click="toiletPush()"></ons-icon>
+			</ons-toolbar-button>
+		</div> -->
+	</ons-toolbar>
+	<ons-fab position="bottom right" modifier="mini">
+		<ons-icon icon="md-plus" ng-click="myModal.show()"></ons-icon>
+	</ons-fab>
+
+	<ons-card style="margin-right:auto">
+		<img src="img/test.jpg" alt="test" title="umeda" height="200dp">
+		<div class="title">
+			Place name
+		</div>
+		<hr>
+		<div class="content">
+			<table class="rating">
+				<tr>
+					<td class="right"><b>総合評価:</b></td>
+					<td>
+						<label ng-click="popover.show($event)">★★★★★</label>
+					</td>
+				</tr>
+				<tr>
+					<td class="right">営業時間:</td>
+					<td>24h</td>
+				</tr>
+				<tr>
+					<td class="right">休業日:</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td class="right">清潔度:</td>
+					<td>梅田(姉)</td>
+				</tr>
+				<tr>
+					<td class="right">混雑度:</td>
+					<td>★★★★★</td>
+				</tr>
+			</table>
+
+			<table border="1" class="tabb">
+				<tr>
+					<td class="centertable">
+						<div>洋式</div>
+						<hr>
+						<div>{{checkD}}</div>
+					</td>
+					<td class="centertable">
+						<div>和式</div>
+						<hr>
+						<div>{{checkD}}</div>
+					</td>
+					<td class="centertable">
+						<div>ウォシュレット</div>
+						<hr>
+						<div>{{checkD}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="centertable">
+						<div>改札の中</div>
+						<hr>
+						<div>{{checkD}}</div>
+					</td>
+					<td class="centertable">
+						<div>多目的トイレ</div>
+						<hr>
+						<div>{{checkD}}</div>
+					</td>
+					<td class="centertable">
+						<div>オストメイト</div>
+						<hr>
+						<div>{{checkD}}</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</ons-card>
+	<br>
+	<div>
+		<!--投稿後更新をかける Pull2Refresh実装予定-->
+		<!-- 内容が長文だとレイアウトが崩れる 要修正(カードにこだわらなければ解決) -->
+		<ons-card>
+			<ons-list ng-controller="ListController as list" id="list">
+				<ons-list-header>Reviews</ons-list-header>
+				<div class="unchi">
+				<ons-list-item ons-lazy-repeat="list.delegate">
+					<ons-card style="width:75vw;">
+						<table style="table-layout:fixed;width:100%;">
+							<tr>
+								<td rowspan="2" style="white-space: nowrap;width: 22%;">
+									<img src="img/test.jpg" alt="test" title="umeda" width="45dp">
+								</td>
+								<td style="textalign:left;">ユーザー名</td>
+							</tr>
+							<tr>
+								<td style="textalign:left;">レビュー内容ほげえaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa{{item}}</td>
+							</tr>
+						</table>
+					</ons-card>
+				</ons-list-item>
+				<div>
+			</ons-list>
+		</ons-card>
+		<!-- スクロール監視して動的にボタン出すのめんどすぎたので形式を変えて保留 -->
+		<!-- <ons-button ng-click="gotoTop()">上じゃ</ons-button> -->
+	</div>
+
+</ons-page>

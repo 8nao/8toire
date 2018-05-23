@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+
+	<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
+	<link rel="stylesheet" href="components/loader.css">
+	<link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+	<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style2.css">
+	<script>
+
+	</script>
+</head>
+
+<body ng-app="my-app" onload="initialize()">
+	<script src="components/loader.js"></script>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/onsenui/js/onsenui.min.js"></script>
+	<script src="lib/onsenui/js/angular-onsenui.min.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/detail.js"></script>
+
+	<script src="js/MUSIC.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVy1My4f64VyFUBXlgtzw1Wp1-T9eSj4E"></script>
+
+	<ng-include src="'detail_tool.html'"></ng-include>
+	
+		<ons-navigator var="navi" page="splitter.html"></ons-navigator>
+		<ons-template id="splitter.html">
+			<ons-page>
+				<ons-splitter ng-controller="AppController as app" var="splitter">
+					<ons-splitter-side side="left" width="220px" collapse swipeable swipe-target-width="30px">
+						<ons-page>
+							<ons-list>
+								<ons-list-item ng-click="app.load('home.html')" tappable class="nico">
+									トイレはどこ？
+								</ons-list-item>
+								<ons-list-item ng-click="app.load('settings.html')" tappable class="nico">
+									ログイン
+								</ons-list-item>
+								<ons-list-item ng-click="app.load('about.html')" tappable class="nico">
+									せってい
+								</ons-list-item>
+							</ons-list>
+						</ons-page>
+					</ons-splitter-side>
+					<ons-splitter-content page="home.html"></ons-splitter-content>
+				</ons-splitter>
+			</ons-page>
+		</ons-template>
+
+		<ons-template id="home.html">
+			<ons-page>
+				<ons-toolbar>
+					<div class="left">
+						<ons-toolbar-button ng-click="splitter.left.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+					<div class="center nico">
+						トイレログ
+					</div>
+					<div class="right">
+						<!-- 検索ボタン -->
+						<ons-toolbar-button>
+							<ons-icon icon="fa-search"></ons-icon>
+						</ons-toolbar-button>
+						<!-- 音姫ボタン -->
+						<ons-toolbar-button>
+							<ons-icon icon="fa-music" onclick="sound()"></ons-icon>
+						</ons-toolbar-button>
+						<!-- 絞り込みボタン -->
+						<ons-toolbar-button>
+							<ons-icon icon="fa-filter"></ons-icon>
+						</ons-toolbar-button>
+						<!-- トイレ追加ボタン -->
+						<ons-toolbar-button>
+							<ons-icon icon="fa-plus"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+				</ons-toolbar>
+				<!--画面に初手から地図を表示-->
+				<div id="map_canvas" style="width:100%; height:100%"></div>
+			</ons-page>
+		</ons-template>
+
+		<ons-template id="settings.html">
+			<ons-page>
+				<ons-toolbar>
+					<div class="left">
+						<ons-toolbar-button ng-click="splitter.left.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+					<div class="center nico">
+						ログイン
+					</div>
+				</ons-toolbar>
+				<!-- 表示 -->
+			</ons-page>
+		</ons-template>
+
+
+		<ons-template id="about.html">
+			<ons-page>
+				<ons-toolbar>
+					<div class="left">
+						<ons-toolbar-button ng-click="splitter.left.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						</ons-toolbar-button>
+					</div>
+					<div class="center nico">
+						せってい
+					</div>
+				</ons-toolbar>
+				このアプリの設定とはいったい何をすればいいのか...
+			</ons-page>
+		</ons-template>
+
+		<!-- 音姫起動 -->
+		<audio id="sound-file">
+			<source src="media/otoware.mp3" type="audio/mp3">
+		</audio>
+
+</body>
+
+</html>
