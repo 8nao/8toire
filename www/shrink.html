@@ -1,0 +1,40 @@
+<!-- 絞込み -->
+  <ons-modal var="sModal" direction="up"  class="smodal">
+
+	<ons-card style="color:black">
+		<div><h3>絞込み検索</h3></div>
+		<div style="margin-top: 30px; margin-bottom: 30px;">			
+      <ons-list>
+        <label for="check-1">
+          <ons-list-item tappable>
+          <ons-checkbox input-id="check-1" class="cbox"></ons-checkbox>　洋式</ons-list-item>
+        </label>
+        <label for="check-2">
+          <ons-list-item tappable>
+          <ons-checkbox input-id="check-2" class="cbox"></ons-checkbox>　和式</ons-list-item>
+        </label>
+        <label for="check-3">
+          <ons-list-item tappable>
+          <ons-checkbox input-id="check-3" class="cbox"></ons-checkbox>　ウォシュレット</ons-list-item>
+        </label>
+        <label for="check-4">
+          <ons-list-item tappable>
+          <ons-checkbox input-id="check-4" class="cbox"></ons-checkbox>　改札の中</ons-list-item>
+        </label>
+        <label for="check-5">
+          <ons-list-item tappable>
+          <ons-checkbox input-id="check-5" class="cbox"></ons-checkbox>　多目的トイレ</ons-list-item>
+        </label>
+        <label for="check-6">
+          <ons-list-item tappable>
+          <ons-checkbox input-id="check-6" class="cbox"></ons-checkbox>　オストメイト</ons-list-item>
+        </label>
+    </div>
+    
+    <p style="text-align:center">
+		  <ons-button tappable ng-click="sModal.hide()">キャンセル</ons-button>
+		  <ons-button tappable style="width:105px">検索</ons-button>
+    </p>		
+		
+	</ons-card>
+</ons-modal>
