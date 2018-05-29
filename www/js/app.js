@@ -20,7 +20,7 @@ var contentString = "<div>"+
 "<input type='button' value='詳細' onClick='detail()'></div></div>"
 
 function initialize() {
-     var mapOptions = {
+  var mapOptions = {
           center: new google.maps.LatLng(34.703615, 135.509339),    //地図上で表示させる緯度経度
           zoom: 14,                                                 //地図の倍率
           mapTypeId: google.maps.MapTypeId.ROADMAP                  //地図の種類
@@ -30,7 +30,7 @@ function initialize() {
 
      var simpleMapStyle, map;
 
-     // POI を非表示にするマップタイプを定義
+ // POI を非表示にするマップタイプを定義
      simpleMapStyle = new google.maps.StyledMapType([
           {
                featureType: "poi",
@@ -41,16 +41,14 @@ function initialize() {
           }
      ], { name: "Simple Map" });
 
-     // マップタイプを追加して設定
-     map.mapTypes.set("simple_map", simpleMapStyle);
-     map.setMapTypeId("simple_map");
+     var responseTextarea = document.getElementById( "response" ) ;
 
-     var myLatlng = new google.maps.LatLng(34.703615, 135.509339); //扇町公園の経度、緯度
+       var myLatlng = new google.maps.LatLng(34.703615, 135.509339); //扇町公園の経度、緯度
      var marker = new google.maps.Marker({
           position: myLatlng,
           title: "梅田の家"
      });
-     marker.setMap(map);
+       marker.setMap(map);
      //ポップアップ表示のやつ
      marker.addListener("click", function () {
           var infowindow = new google.maps.InfoWindow({
@@ -58,8 +56,17 @@ function initialize() {
           });
           infowindow.open(map, marker);
      });
-}
 
+	// Method
+	document.getElementById( "method" ).onclick = function () {
+		var response = map.getCenter() ;
+		new google.maps.Marker( { map: map, position: response, } ) ;
+		try{ response = typeof response == "object" ? JSON.stringify( response ) : response ; }catch(e){}
+		responseTextarea = response ;
+		console.log( response ) ;
+    
+	}
+}
 function detail(){
      navi.pushPage('detail.html')
 }
@@ -67,3 +74,7 @@ function detail(){
 //💩
 ons.ready(function () {
 })
+
+
+
+    
