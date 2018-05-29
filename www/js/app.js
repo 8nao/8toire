@@ -71,7 +71,7 @@ function detail(){
      navi.pushPage('detail.html')
 }
 
-//💩
+// 
 ons.ready(function () {
 })
 

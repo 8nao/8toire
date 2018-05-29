@@ -31,6 +31,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVy1My4f64VyFUBXlgtzw1Wp1-T9eSj4E"></script>
 
 	<ng-include src="'detail_tool.html'"></ng-include>
+<ng-include src="'shrink.html'"></ng-include>
 	
 		<ons-navigator var="navi" page="splitter.html"></ons-navigator>
 		<ons-template id="splitter.html">
@@ -78,7 +79,7 @@
 						</ons-toolbar-button>
 						<!-- 絞り込みボタン -->
 						<ons-toolbar-button>
-							<ons-icon icon="fa-filter"></ons-icon>
+							<ons-icon icon="fa-filter" ng-click="sModal.show()"></ons-icon>
 						</ons-toolbar-button>
 						<!-- トイレ追加ボタン -->
 						<ons-toolbar-button>
