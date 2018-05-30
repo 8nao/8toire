@@ -1,9 +1,9 @@
 module.controller('PageController', function ($scope, $location, $anchorScroll) {
 
-	$scope.gotoTop = function () {
-		$location.hash('topanc')
-		$anchorScroll()
-	}
+	// $scope.gotoTop = function () {
+	// 	$location.hash('topanc')
+	// 	$anchorScroll()
+	// }
 
 	// $scope.toiletPush = function () {
 	// 	$scope.navi.pushPage('toiletsettings.html')

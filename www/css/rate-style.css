@@ -1,0 +1,16 @@
+.star-rating {
+    position: relative;
+    width: 3em;
+    height: 1em;
+    font-size: 25px;
+  
+}
+#star-rating-front {
+    position: absolute;
+    overflow: hidden;
+    color: yellow;
+    width:5em;
+}
+.star-rating-back {
+    color:gray;
+}

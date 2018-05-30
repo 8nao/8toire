@@ -2,7 +2,12 @@
 <ons-popover direction="up" var="popover" cancelable="true">
 	<div style="padding: 10px; text-align: center;">
 		<p>
-			評価内訳
+			<input type="text" id="rate" ng-model="rate">
+        <div class="star-rating">
+            <div id="star-rating-front">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
+            <div>{{rate}}</div>
+        </div>
 		</p>
 	</div>
 </ons-popover>
@@ -14,7 +19,18 @@
 		<div>Reviews</div>
 		<div style="text-align: center; margin-top: 30px">
 			<p>
-				<ons-input id="stars" modifier="underbar" placeholder="★出すとこ" float ng-model="page.stars"></ons-input>
+				<div class="hyouka">
+					<input id="hoshi1" type="radio" name="hoshi" value="5" />
+					<label for="hoshi1">★</label>
+					<input id="hoshi2" type="radio" name="hoshi" value="4" />
+					<label for="hoshi2">★</label>
+					<input id="hoshi3" type="radio" name="hoshi" value="3" />
+					<label for="hoshi3">★</label>
+					<input id="hoshi4" type="radio" name="hoshi" value="2" />
+					<label for="hoshi4">★</label>
+					<input id="hoshi5" type="radio" name="hoshi" value="1" />
+					<label for="hoshi5">★</label>
+				</div>
 			</p>
 			<p>
 				<ons-input id="comment" modifier="underbar" placeholder="コメント" float ng-model="page.comment"></ons-input>
@@ -23,18 +39,27 @@
 			<ons-button tappable ng-click="saveReview();showToast()">Submit</ons-button>
 		</div>
 		<dl class="accordion">
-			<ons-button tappable ng-click="flag = !flag">open</ons-button>
+			<dt style="clear:left;text-align:right">
+				<ons-button tappable ng-click="flag = !flag">open</ons-button>
+			</dt>
 
 			<dd ng-class="{hide: !flag}">
 				<!--非表示ここから-->
 				<table class="hiddenbox">
 					<tr>
-						<td>営業時間</td>
+						<td rowspan="2">営業時間</td>
+						<!-- これチェックで開始時間と終了時間のinputをdisabledにしたい -->
 						<td>
-							開始時間<input type="time" class="text-input" ng-model="inputStartTime" />
+							<ons-checkbox input-id="24h">休みないよ</ons-checkbox>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							開始時間<input type="time" class="text-input" ng-model="rv.inputStartTime" id="inputSTime" />
 						</td>
 						<td>
-							終了時間<input type="time" class="text-input" ng-model="inputEndTime" />
+							終了時間<input type="time" class="text-input" ng-model="rv.inputEndTime" id="inputETime" />
 						</td>
 					</tr>
 					<tr>
@@ -56,14 +81,6 @@
 										<ons-checkbox input-id="check-DotW" ng-model="rv.Saturday"></ons-checkbox> 土</td>
 									<td>
 										<ons-checkbox input-id="check-DotW" ng-model="rv.Sunday"></ons-checkbox> 日</td>
-									<!-- <option value="Monday">月</option>
-								<option value="Tuesday">火</option>
-								<option value="Wednesday">水</option>
-								<option value="Thursday">木</option>
-								<option value="Friday">金</option>
-								<option value="Saturday">土</option>
-								<option value="Sunday">日</option>
-							</ons-select> -->
 								</tr>
 							</table>
 						</td>

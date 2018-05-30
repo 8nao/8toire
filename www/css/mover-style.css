@@ -1,0 +1,38 @@
+.hyouka{
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: flex;
+  
+  flex-direction: -ms-row-reverse;
+  flex-direction: -webkit-row-reverse;
+  flex-direction: -moz-row-reverse;
+  flex-direction: -o-row-reverse; 
+  flex-direction: row-reverse;
+   
+ justify-content: -ms-right;
+ justify-content: -webkit-right;
+ justify-content: -moz-right;
+ justify-content: -o-right;
+ justify-content: right;
+ }
+ .hyouka input[type='radio']{
+   display: none;
+ }
+ .hyouka input[type='radio']{
+   display: none;
+ }
+ .hyouka label{
+   position: relative;
+   padding: 10px 0px 20px 0px;
+   color: #bbb;
+   cursor: pointer;
+   font-size: 30px;
+ }
+  
+ .hyouka label:hover,
+ .hyouka label:hover ~ label,
+ .hyouka input[type='radio']:checked ~ label{
+   color: #faee2e;
+ }

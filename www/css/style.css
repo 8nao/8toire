@@ -9,3 +9,14 @@
 .info{
      margin-left: 50px;
 }
+.check{
+	font-size:80%;
+}
+.radiobutton{
+	margin-left: 2em;
+}
+.unti{
+	position: absolute;
+	right: 0;
+	margin-right: 20px;
+}

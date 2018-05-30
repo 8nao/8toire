@@ -11,6 +11,9 @@
 	table-layout: fixed;
 	width:100%;
 }
+.TBright{
+	width: 100%;
+}
 .right{
 	text-align: right;
 }
@@ -27,7 +30,7 @@
 }
 
 .accordion {
-    margin: 2em 0;
+    margin:0;
     padding: 0;
 }
 
@@ -36,27 +39,12 @@
   height: 20vh;
   -webkit-transition: height 0.5s ease;
   transition: height 0.5s ease;
+  margin-left:0;
 }
 .accordion dd.hide {
   height: 0;
   overflow:hidden;
 }
-
-/*スクロールさせようとしてダメだったやつ*/
-/* .accordion ons-page {
-  width:95%;
-  height:30%;
-  top:57vh;
-  border-radius:10px;
-  margin:0 auto;
-  padding:0;
-  overflow-x:hidden;
-  -webkit-transition: height 0.5s ease;
-  transition: height 0.5s ease;
-}
-.accordion ons-page.hide {
-  height: 0;
-} */
 
 .hiddentable{
 	text-align: center;

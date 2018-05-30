@@ -3,10 +3,7 @@
 <!-- iosの場合footerにボタンを置く? -->
 
 <!-- マーカーの吹き出し押したら飛ぶページ -->
-
 <ons-page id="detail.html" ng-controller="PageController as Page">
-
-	<div id="topanc"></div>
 
 	<!-- Pull2Refresh 見かけだけなので要修正 -->
 	<!-- lazy-repeatの場合の使い方がよくわかっていない -->
@@ -65,7 +62,7 @@
 				</tr>
 			</table>
 
-			<table border="1" class="tabb">
+			<table border="1" class="tabb" ng-cloak>
 				<tr>
 					<td class="centertable">
 						<div>洋式</div>

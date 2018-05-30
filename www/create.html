@@ -1,7 +1,116 @@
 <ons-page id="create.html">
-	<!-- ここにページを書く
-	モーダルやトースト等のpage外の処理が必要になったら
-	みんなに相談してから別のhtmlファイルを作ってdetail_toolみたいにng-includeしてくれ -->
-f
-  <p>ai</p>
+	<ons-toolbar>
+		<ons-back-button class="nico">もどる</ons-back-button>
+		<div class="center nico">にゅーといれ</div>
+	</ons-toolbar>
+	<ons-card>
+		<div class="center">
+			<p class="nico">といれのなまえ</p>
+			<ons-input id="toilename" modifier="underbar" placeholder="例) ECCのトイレ" float></ons-input>
+		</div>
+	</ons-card>
+	<ons-card>
+		<p class="nico center">えいぎょうじかん</p>
+		<ons-list-item tappable>
+			<label class="left">
+                    <ons-checkbox input-id="timee"></ons-checkbox>
+               </label>
+			<label for="timee" class="center">
+                    24時間営業中
+               </label>
+		</ons-list-item>
+		<p class="nico center">かいしじかん
+			<input type="time" class="text-input" ng-model="rv.inputStartTime" id="inputSTime" /> しゅうりょうじかん
+			<input type="time" class="text-input" ng-model="rv.inputEndTime" id="inputETime" />
+		</p>
+	</ons-card>
+	<ons-card>
+		<p class="nico center">せつびしょうさい</p>
+          <div>
+               <label class="radiobutton">和式</label>
+               <span class="unti">
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="wasiki">
+                      <div class="radio-button__checkmark radio-button--material__checkmark" style="text-align: right"></div>
+                         Yes
+               </label>
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="wasiki">
+                      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                         No
+               </label>
+               </span>
+          </div>
+
+          <div>
+               <label class="radiobutton">洋式</label>
+               <span class="unti">
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="youshiki">
+                      <div class="radio-button__checkmark radio-button--material__checkmark" style="text-align: right"></div>
+                         Yes
+               </label>
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="youshiki">
+                      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                         No
+               </label>
+               </span>
+          </div>
+
+           <div>
+               <label class="radiobutton">ウォシュレット</label>
+               <span class="unti">
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="wash">
+                      <div class="radio-button__checkmark radio-button--material__checkmark" style="text-align: right"></div>
+                         Yes
+               </label>
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="wash">
+                      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                         No
+               </label>
+               </span>
+          </div>
+          
+          <div>
+               <label class="radiobutton">多目的トイレ</label>
+               <span class="unti">
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="tamotoi">
+                      <div class="radio-button__checkmark radio-button--material__checkmark" style="text-align: right"></div>
+                         Yes
+               </label>
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="tamotoi">
+                      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                         No
+               </label>
+               </span>
+          </div>
+
+          <div>
+               <label class="radiobutton">オストメイト</label>
+               <span class="unti">
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="osuto">
+                      <div class="radio-button__checkmark radio-button--material__checkmark" style="text-align: right"></div>
+                         Yes
+               </label>
+			<label class="radio-button radio-button--material">
+                      <input type="radio" class="radio-button__input radio-button--material__input" name="osuto">
+                      <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                         No
+               </label>
+               </span>
+          </div>
+	</ons-card>
+	<ons-card>
+          <form method="post" enctype="multipart/form-data">
+               <p class="center nico">しゃしん</p>
+               <input type="file" name="pic">
+               <input type="submit" name="botan" value="send">
+          </form>
+	</ons-card>
 </ons-page>
